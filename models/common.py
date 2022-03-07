@@ -551,6 +551,7 @@ class AutoShape(nn.Module):
         with amp.autocast(enabled=autocast):
             # Inference
             y = self.model(x, augment, profile)  # forward
+            print(y.shape) # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             t.append(time_sync())
 
             # Post-process
