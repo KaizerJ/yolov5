@@ -557,7 +557,6 @@ class AutoShape(nn.Module):
             # Post-process
             y = non_max_suppression(y if self.dmb else y[0], self.conf, iou_thres=self.iou, classes=self.classes,
                                     agnostic=self.agnostic, multi_label=self.multi_label, max_det=self.max_det)  # NMS
-            print(y.shape) # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             for i in range(n):
                 scale_coords(shape1, y[i][:, :4], shape0[i])
 
